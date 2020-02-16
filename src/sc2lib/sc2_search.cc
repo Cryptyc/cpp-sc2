@@ -125,6 +125,10 @@ std::vector<Point3D> CalculateExpansionLocations(const ObservationInterface* obs
                 closest = p;
             }
         }
+        if (closest == Point2D())
+        {
+            continue;
+        }
 
         Point3D expansion(closest.x, closest.y, cluster.second.begin()->pos.z);
 
